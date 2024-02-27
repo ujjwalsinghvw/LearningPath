@@ -21,10 +21,11 @@ export class HardcodedAuthenticationServiceService {
   }
 
   isUserLoggedIn(){
-    return sessionStorage.getItem("user")!=null
+    return sessionStorage.getItem("authenticatedUser")!=null && sessionStorage.getItem("token")!=null
   }
 
   logout(){
-    sessionStorage.removeItem("user")
+    sessionStorage.removeItem("authenticatedUser")
+    sessionStorage.removeItem("token")
   }
 }

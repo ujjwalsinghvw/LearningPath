@@ -12,22 +12,22 @@ export class TodoDataService {
    }
 
    retrieveAllTodos(username : String){
-    return this.http.get<Todos[]>(`${API_URL}/${username}/todos`)
+    return this.http.get<Todos[]>(`${API_URL}/users/${username}/todos`)
    }
 
    deleteTodo(username:string, id:number){
-    return this.http.delete(`${API_URL}/${username}/todos/${id}`)
+    return this.http.delete(`${API_URL}/users/${username}/todos/${id}`)
    }
 
    getTodo(username:string, id:number){
-    return this.http.get<Todos>(`${API_URL}/${username}/todos/${id}`)
+    return this.http.get<Todos>(`${API_URL}/users/${username}/todos/${id}`)
    }
 
    updateTodo(username:string, id:number, todo: Todos){
-    return this.http.put(`${API_URL}/${username}/todos/${id}`, todo)
+    return this.http.put(`${API_URL}/users/${username}/todos/${id}`, todo)
    }
 
    createTodo(username:string, todo: Todos){
-    return this.http.post(`${API_URL}/${username}/todos`, todo)
+    return this.http.post(`${API_URL}/users/${username}/todos`, todo)
    }
 }
